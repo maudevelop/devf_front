@@ -1,0 +1,69 @@
+#movieImg{
+    margin-top: 3px;
+    width: 400px;
+    height: 440px;
+}
+
+.rotten{
+    font-weight: normal;
+}
+
+.card-action{
+    margin-bottom: 10px;
+    background-color:white;
+}
+
+#freshRotten{
+    float: right;
+    width: 30px;
+    margin-right: 90px;
+    margin-top: -28px;
+}
+
+#title{
+    font-size: 1.3rem;
+    
+}
+.fresh{
+    font-weight: bold;
+}
+
+#description{
+    font-size: 1.25rem;
+    padding-right: 10px;
+}
+
+.brand-logo{
+    margin-left: 6px;
+    margin-top: 4px;
+    width: 150px;
+}
+
+#searchField{
+    color: black;
+    margin: 30px auto 0 auto;
+    width: 50%;
+}
+
+@media (min-width: 990px) {
+    #movieImg
+    {
+        width: 254px;
+        height: 310px;
+    }
+    .row .col.l4 {
+        width: 28%;
+        margin-right: 30px;
+        margin-left: auto;
+    }
+
+   
+
+    .row .col.l4:nth-child(1n) {
+        margin-left:15px;
+    }
+
+    .row .col.l4:nth-child(3n) {
+        margin-right:0;
+    }
+}

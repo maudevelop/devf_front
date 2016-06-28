@@ -1,0 +1,46 @@
+<form id="searchField" class="forms forms-inline input-field" >
+                <input type="text" class="input-big width-50" id="query" ng-model="search.name">
+                <label for="query">Search Movies...</label>
+</form>
+
+
+<form id="sortOrder" action="#">
+    <p class="center-align" >Sort Order:
+    <input ng-click= "model.changeOrder()" checked="checked" ng-model= "model.sortOrder" name="group1" type="radio" id="sortAlpha" value="sortAlpha" />
+    <label for="sortAlpha">Alphabetically</label>
+    <input ng-click= "model.changeOrder()" ng-model= "model.sortOrder" name="group1" type="radio" id="sortRatingA" value="sortRatingA"/>
+    <label for="sortRatingA">Rating (Ascending)</label>
+    <input ng-click= "model.changeOrder()" ng-model= "model.sortOrder" name="group1" type="radio" id="sortRatingD" value="sortRatingD" />
+    <label for="sortRatingD">Rating (Descending)</label>
+
+    </p>
+</form>
+    
+<div class="row">
+    <div ng-repeat="movie in model.movies | filter: search | orderBy: model.movies.name" class="card hoverable col s6 m6 l4">
+
+        <div class="card-image waves-effect waves-block waves-light">
+            <img id="movieImg" class="activator" ng-src="{{movie.imgSrc}}">
+        </div>
+
+        <div class="card-content">
+            <span id="title" class="card-title activator grey-text text-darken-4">{{movie.name}}<i class="material-icons right">more_vert</i></span>
+            <p ng-class="{ 'rotten': {{movie.rating < 50}}, 'fresh': {{movie.rating > 50}} }"<a href="#">{{movie.rating}}% Rating</a></p>
+            <img ng-show="{{movie.rating>=90}}" src="/img/certifiedfresh.png" id="freshRotten" alt="" class="src">
+            <img ng-show="{{movie.rating>50 && movie.rating < 90}}" src="/img/fresh.ico" id="freshRotten" alt="" class="src">
+            <img ng-show="{{movie.rating<50}}" src="/img/rotten.png" id="freshRotten" alt="" class="src">
+            </div>
+
+        <div class="card-reveal">
+            <span id="description" class="card-title grey-text text-darken-4">{{movie.description}}<i class="material-icons right">close</i></span>
+            <p>{{movie.genre}}</p>
+
+
+          
+        </div>
+        <div class="card-action text-center">
+            <a id="addMovie" ng-click="model.addMovie($index)" href="">Add to Movie List</a>
+        </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ejercicio1">
+<head>
+    <meta charset="UTF-8">
+    <title>ejercicio1</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="palindromoCtrl as palindromo">
+    <div class="container-fluid text-center">
+        <div class="well">
+    <input ng-model="palindromo.palabra" placeholder="Escribe una palabra..." type="text" ng-change="palindromo.checkPalindrome()">
+    <p id="resultado">{{ palindromo.check }}</p>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

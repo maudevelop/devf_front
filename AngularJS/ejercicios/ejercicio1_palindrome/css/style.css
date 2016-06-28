@@ -1,0 +1,15 @@
+.container-fluid{
+    margin: 0 auto;
+    margin-top: 20%;
+    color: darkgreen;
+    width: 400px;
+    
+}
+
+#resultado{
+    margin-top: 10px;
+}
+.well{
+    padding-top: 30px;
+    background-color:rgba(0,0,0,0.22);
+}

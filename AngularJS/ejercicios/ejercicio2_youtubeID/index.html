@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ejercicio2">
+<head>
+    <meta charset="UTF-8">
+    <title>Youtube Search by ID</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="youtubeCtrl as finder">
+
+<!--
+pFptt7Cargc
+test ID
+-->
+    <div class="container-fluid text-center">
+
+        <div id="search" class="well">
+            <p><img id="logo" src="https://www.youtube.com/yt/brand/media/image/YouTube-logo-full_color.png">ID Search</p>
+            <p>https://youtube.com/watch?v=<input ng-model="finder.id" placeholder="Inserta un ID de video" type="text" ng-change="finder.changeSource()"></p>
+        </div>
+        <div id="player" class="well">
+            <iframe width="565" height="320" ng-src="{{finder.src}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

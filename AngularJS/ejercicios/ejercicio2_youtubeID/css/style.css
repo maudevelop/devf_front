@@ -1,0 +1,32 @@
+.container-fluid{
+    margin: 0 auto;
+    margin-top: 8px;
+    color: darkgreen;
+    max-width: 600px;
+    
+}
+#logo{
+    width: 120px;
+    height: 70px;
+    margin: -5px -5px -5px -5px;
+}
+h2{
+    color: black;
+}
+#resultado{
+    margin-top: 10px;
+}
+.well{
+    width: 600px;
+    padding-top: 8px;
+    background-color:rgba(0,0,0,0.05);
+}
+#search{
+    background-color:rgba(255,255,255,1);
+    margin: 0 auto;
+    width: 300px;
+}
+#player{
+    background-image: url("http://cdn2.pcadvisor.co.uk/cmsdata/features/3447673/YouTube.jpg");
+    background-size: cover;
+}
