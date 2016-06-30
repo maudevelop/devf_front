@@ -4,10 +4,31 @@
     height: 440px;
 }
 
+#favoriteMovie{
+    background-repeat: no-repeat;
+    background-size: 15%;
+    padding: 42px 42px;
+}
+
+#favorites li{
+    
+    font-size: 20px;
+    text-align: center;
+}
+
+.collection-header{
+    font-size: 35px;
+}
 .rotten{
     font-weight: normal;
 }
 
+.collection{
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    width: 50%;
+}
 .card-action{
     margin-bottom: 10px;
     background-color:white;
@@ -67,3 +88,4 @@
         margin-right:0;
     }
 }
+

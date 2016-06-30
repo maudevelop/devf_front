@@ -11,9 +11,10 @@
         .module('ejercicio3')
         .component('movieCmp', movieCmp);
 
-    function movieCtrl($http){
+    function movieCtrl($http, favorites){
         var model = this;
         
+
         model.sortOrder= "sortAlpha";
 
         $http({
@@ -28,13 +29,16 @@
 
         model.addMovie = addMovie;
         model.changeOrder = changeOrder;
-        model.favorites = [];
+        model.favorites = favorites.list;
+        model.favoritesAdd = favorites.add;
         
         
         function addMovie($index){
             Materialize.toast(model.movies[$index].name + " was added to your movie list!", 4500);
-            model.favorites.push(model.movies[$index]);
-            console.log(model.favorites);
+            // model.favorites.push(model.movies[$index]);
+            // console.log(model.favorites);
+            model.favoritesAdd(model.movies[$index].name, model.movies[$index].imgSrc);
+            
         }
 
         function changeOrder(){
