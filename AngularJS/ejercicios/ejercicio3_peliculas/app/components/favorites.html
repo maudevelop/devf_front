@@ -1,6 +1,6 @@
 <div id="favorites" >
     <ul class="collection with-header">
         <li class="collection-header"><h4>Your Movie List</h4></li>
-        <li id="favoriteMovie" ng-style="{'background-image': 'url({{movie.imgSrc}})'}" ng-repeat="movie in model.movies" class="collection-item"><div>{{movie.name}}<a href="" ng-click="model.deleteFav($index)" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
+        <li id="favoriteMovie" ng-style="{'background-image': 'url({{movie.Poster}})'}" ng-repeat="movie in model.movies" class="collection-item"><div>{{movie.Title}}<a href="" ng-click="model.deleteFav($index)" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
     </ul>
 </div>

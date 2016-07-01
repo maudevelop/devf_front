@@ -1,9 +1,13 @@
 <form id="searchField" class="forms forms-inline input-field" >
-                <input type="text" class="input-big width-50" id="query" ng-model="search.name">
+    
+                <input ng-model="model.searchNew" type="text" class="input-big width-50" id="query" ng-change="search.Title= model.searchNew" >
                 <label for="query">Search Movies...</label>
+                <a ng-click="model.newMovie()" class="waves-effect waves-light btn"><i class="material-icons right">search</i>Search Movie</a>
+
+
 </form>
 
-
+    
 <form id="sortOrder" action="#">
     <p class="center-align" >Sort Order:
     <input ng-click= "model.changeOrder()" checked="checked" ng-model= "model.sortOrder" name="group1" type="radio" id="sortAlpha" value="sortAlpha" />
@@ -12,28 +16,27 @@
     <label for="sortRatingA">Rating (Ascending)</label>
     <input ng-click= "model.changeOrder()" ng-model= "model.sortOrder" name="group1" type="radio" id="sortRatingD" value="sortRatingD" />
     <label for="sortRatingD">Rating (Descending)</label>
-
     </p>
 </form>
     
 <div class="row">
-    <div ng-repeat="movie in model.movies | filter: search | orderBy: model.movies.name" class="card hoverable col s6 m6 l4">
+    <div ng-repeat="movie in model.movies | filter: search | orderBy: model.movies.Title" class="fade card hoverable col s12 m12 l4">
 
         <div class="card-image waves-effect waves-block waves-light">
-            <img id="movieImg" class="activator" ng-src="{{movie.imgSrc}}">
+            <img id="movieImg" class="activator" ng-src="{{movie.Poster}}">
         </div>
 
         <div class="card-content">
-            <span id="title" class="card-title activator grey-text text-darken-4">{{movie.name}}<i class="material-icons right">more_vert</i></span>
-            <p ng-class="{ 'rotten': {{movie.rating < 50}}, 'fresh': {{movie.rating > 50}} }"<a href="#">{{movie.rating}}% Rating</a></p>
-            <img ng-show="{{movie.rating>=90}}" src="/img/certifiedfresh.png" id="freshRotten" alt="" class="src">
-            <img ng-show="{{movie.rating>50 && movie.rating < 90}}" src="/img/fresh.ico" id="freshRotten" alt="" class="src">
-            <img ng-show="{{movie.rating<50}}" src="/img/rotten.png" id="freshRotten" alt="" class="src">
+            <span id="title" class="card-title activator grey-text text-darken-4">{{movie.Title}}<i class="material-icons right">more_vert</i></span>
+            <p ng-class="{ 'rotten': {{movie.tomatoMeter < 50}}, 'fresh': {{movie.tomatoMeter > 50}} }"<a href="#">{{movie.tomatoMeter}}% Rating</a></p>
+            <img ng-show="{{movie.tomatoMeter>=90}}" src="/img/certifiedfresh.png" id="freshRotten" alt="" class="src">
+            <img ng-show="{{movie.tomatoMeter>50 && movie.tomatoMeter < 90}}" src="/img/fresh.ico" id="freshRotten" alt="" class="src">
+            <img ng-show="{{movie.tomatoMeter<50}}" src="/img/rotten.png" id="freshRotten" alt="" class="src">
             </div>
 
         <div class="card-reveal">
-            <span id="description" class="card-title grey-text text-darken-4">{{movie.description}}<i class="material-icons right">close</i></span>
-            <p>{{movie.genre}}</p>
+            <span id="description" class="card-title grey-text text-darken-4">{{movie.Plot}}<i class="material-icons right">close</i></span>
+            <p>{{movie.Genre}}</p>
 
 
           

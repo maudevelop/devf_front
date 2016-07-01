@@ -9,15 +9,21 @@
     
     $stateProvider
         
-        // HOME STATES AND NESTED VIEWS ========================================
+        // HOME STATE VIEW  ++++++++++++=========================
         .state('home', {
             url: '/home',
             template: '<movie-cmp></movie-cmp>'
         })
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('addMovie', {
-            url: '/addMovie',
+        // FAVORITES PAGE VIEW  =================================
+        .state('favorites', {
+            url: '/favorites',
             template: '<favorites-cmp></favorites-cmp>'
+        })
+        
+        // FAVORITES PAGE VIEW  =================================
+        .state('about', {
+            url: '/about',
+            template: '<about-cmp></about-cmp>'
         });
         
     });
