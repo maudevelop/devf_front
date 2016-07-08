@@ -1,7 +1,8 @@
 (function() {
     'use strict';
 
-    const API_KEY = "252cf6eaaaf72a765c7ed6546371a049"
+    const API_KEY = "252cf6eaaaf72a765c7ed6546371a049";
+
     var movieCmp = {
         controller: movieCtrl,
         controllerAs: 'model',
@@ -42,7 +43,7 @@
         
         function addMovie($index){
             Materialize.toast(model.movies[$index].Title + " was added to your movie list!", 4500);
-            model.favoritesAdd(model.movies[$index].Title, model.movies[$index].Poster);
+            model.favoritesAdd(model.movies[$index].Title, model.movies[$index].imgSrc);
             
         }
 
@@ -68,22 +69,22 @@
         }
 
 
-var imdbId;
+
         function newMovie(){
             $http({
                 method: 'GET',
                 url: 'http://www.omdbapi.com/?t=' + model.searchNew + '&y=&plot=full&tomatoes=true&r=json'
             }).then(function(response1)
             {
-                imdbId = response1.data.imdbId;
                 model.movies.push(response1.data);
-                console.log(imdbId);
+                var imdbId = model.movies[model.movies.length-1].imdbID;                
                 $http({
                 method: 'GET',
-                url: 'https://api.themoviedb.org/3/movie' + imdbId + '?api_key=252cf6eaaaf72a765c7ed6546371a049'
+                url: 'https://api.themoviedb.org/3/movie/' + imdbId + '?api_key=252cf6eaaaf72a765c7ed6546371a049'
                 }).then(function(response2)
                 {
-                    response1.data.Poster = response2.data;
+                    console.log(response2.data);
+                    model.movies[model.movies.length-1].imgSrc = "http://image.tmdb.org/t/p/w160/" + response2.data.poster_path;
                 });
             
             });

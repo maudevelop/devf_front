@@ -23,7 +23,7 @@
     <div ng-repeat="movie in model.movies | filter: search | orderBy: model.movies.Title" class="fade card hoverable col s12 m12 l4">
 
         <div class="card-image waves-effect waves-block waves-light">
-            <img id="movieImg" class="activator" ng-src="{{movie.Poster}}">
+            <img id="movieImg" class="activator" ng-src="{{movie.imgSrc}}">
         </div>
 
         <div class="card-content">

@@ -3,13 +3,13 @@
 
     angular.module('ejercicio3', ['ui.router', 'ngAnimate'])
         .factory('favorites', function(){
-  var favorites = {};
+          var favorites = {};
 
-  favorites.list = [];
+          favorites.list = [];
 
-  favorites.add = function(name, image){
-    favorites.list.push({"Title":name, "Poster": image});
-  };
+          favorites.add = function(name, image){
+            favorites.list.push({"Title":name, "imgSrc": image});
+        };
 
   return favorites;
 });

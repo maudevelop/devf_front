@@ -14,13 +14,13 @@
             url: '/home',
             template: '<movie-cmp></movie-cmp>'
         })
-        // FAVORITES PAGE VIEW  =================================
+        // FAVORITES STATE VIEW  =================================
         .state('favorites', {
             url: '/favorites',
             template: '<favorites-cmp></favorites-cmp>'
         })
         
-        // FAVORITES PAGE VIEW  =================================
+        // FAVORITES STATE VIEW  =================================
         .state('about', {
             url: '/about',
             template: '<about-cmp></about-cmp>'
