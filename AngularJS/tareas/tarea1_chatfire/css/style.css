@@ -1,0 +1,17 @@
+.container{
+    margin-top: 2%;
+    width: 50%;
+}
+
+#messages{
+    margin-top: 5%;
+}
+
+#messageForm{
+    margin-bottom: 5%;
+}
+
+#sendBtn{
+    width: 100%;
+    margin: 0 auto;
+}

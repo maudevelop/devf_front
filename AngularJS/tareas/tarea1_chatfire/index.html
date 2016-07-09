@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chat">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+
+    <!-- Chat Component -->
+
+    <div class="container">
+    <chat></chat>
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDHQxupqnrOdRc7RspWQ0VZ1QT44m0Y9VQ",
+                authDomain: "chatfire-9b486.firebaseapp.com",
+                databaseURL: "https://chatfire-9b486.firebaseio.com",
+                storageBucket: "",
+            };
+            firebase.initializeApp(config);
+    </script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
+
+    <!-- App files -->
+    <script src="app/app.js"></script>
+    <script src="app/factory/factory.js"></script>
+    <script src="app/chat_component/chat_component.js"></script>
+
+</body>
+</html>
